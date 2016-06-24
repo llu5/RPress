@@ -55,8 +55,3 @@ Slide With  Plotting Result from RISMed
 ![plot of chunk unnamed-chunk-4](TestRPres-figure/unnamed-chunk-4-1.png)
 
 
-Slide With  Plotting Result of journal names from RISMed 
-========================================================
-
-![plot of chunk unnamed-chunk-5](TestRPres-figure/unnamed-chunk-5-1.png)
-

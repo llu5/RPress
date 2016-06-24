@@ -68,28 +68,3 @@ barplot(tally, las=2, ylim=c(0,7000), main="Number of PubMed articles containing
 ```
 
 
-Slide With  Plotting Result of journal names from RISMed 
-========================================================
-
-```{r, echo=FALSE}
-
-library(RISmed)
- 
-#now let's look up this dude called Dave Tang
-res <- EUtilsSummary('therapeutic AND vaccine', type='esearch', db='pubmed')
- 
-tally <- array()
-x <- 1
-for (i in 1986:2016){
-  Sys.sleep(1)
-  r <- EUtilsSummary('therapeutic AND vaccine', type='esearch', db='pubmed', mindate=i, maxdate=i)
-  tally[x] <- QueryCount(r)
-  x <- x + 1
-}
- 
-names(tally) <- 1986:2016
-
- 
-barplot(tally, las=2, ylim=c(0,7000), main="Number of PubMed articles containing therapeutic AND vaccine")
-```
-
