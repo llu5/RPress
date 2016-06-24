@@ -57,7 +57,7 @@ for (i in 1986:2016){
 names(tally) <- 1986:2016
 
  
-barplot(tally, las=2, ylim=c(0,7000), main="Number of PubMed articles containing therapeutic AND vaccine")
+barplot(tally, las=2, ylim=c(0,7000), main="Number of PubMed articles containing 'therapeutic' AND 'vaccine'")
 ```
 
 
