@@ -1,0 +1,95 @@
+TestRPres
+========================================================
+author: 
+date: 
+autosize: true
+
+First Slide
+========================================================
+
+For more details on authoring R presentations please visit <https://support.rstudio.com/hc/en-us/articles/200486468>.
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+Slide With Code
+========================================================
+
+```{r}
+summary(cars)
+```
+
+Slide With Plot
+========================================================
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+
+Slide With  RISMed
+========================================================
+
+```{r, echo=FALSE}
+
+library(RISmed)
+ 
+#now let's look up this dude called Dave Tang
+res <- EUtilsSummary('therapeutic AND vaccine', type='esearch', db='pubmed')
+ 
+summary(res)
+```
+
+
+Slide With  Plotting Result from RISMed
+========================================================
+
+```{r, echo=FALSE}
+
+library(RISmed)
+ 
+#now let's look up this dude called Dave Tang
+res <- EUtilsSummary('therapeutic AND vaccine', type='esearch', db='pubmed')
+ 
+tally <- array()
+x <- 1
+for (i in 1986:2016){
+  Sys.sleep(1)
+  r <- EUtilsSummary('therapeutic AND vaccine', type='esearch', db='pubmed', mindate=i, maxdate=i)
+  tally[x] <- QueryCount(r)
+  x <- x + 1
+}
+ 
+names(tally) <- 1986:2016
+
+ 
+barplot(tally, las=2, ylim=c(0,7000), main="Number of PubMed articles containing therapeutic AND vaccine")
+```
+
+
+Slide With  Plotting Result of journal names from RISMed 
+========================================================
+
+```{r, echo=FALSE}
+
+library(RISmed)
+ 
+#now let's look up this dude called Dave Tang
+res <- EUtilsSummary('therapeutic AND vaccine', type='esearch', db='pubmed')
+ 
+tally <- array()
+x <- 1
+for (i in 1986:2016){
+  Sys.sleep(1)
+  r <- EUtilsSummary('therapeutic AND vaccine', type='esearch', db='pubmed', mindate=i, maxdate=i)
+  tally[x] <- QueryCount(r)
+  x <- x + 1
+}
+ 
+names(tally) <- 1986:2016
+
+ 
+barplot(tally, las=2, ylim=c(0,7000), main="Number of PubMed articles containing therapeutic AND vaccine")
+```
+
